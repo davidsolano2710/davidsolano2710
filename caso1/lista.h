@@ -1,9 +1,9 @@
-// los metodos van a ser en funcion de las operaciones TAD de una lista
+void insertar(Node);// para insertar elementos en listas
 
-void insertar(Node);
+void delete(Node);// borrar toda la lista al terminar de usarla
 
-void delete(Node);
+Node *listar();// imprimir todos los elementos de la lista
 
-Node *listar();
+Node *buscar(string palabraDeBusqueda);// buscar elementos especificos
 
-Node *buscar(string palabraDeBusqueda);
+Node *eliminar(string palabraDebusqueda);// eliminar elemento especifico

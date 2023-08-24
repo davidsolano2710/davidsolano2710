@@ -1,0 +1,1 @@
+el tipo de lista que se va a usar es la lista enlazada simple 

@@ -1,9 +1,11 @@
-// los metodos van a ser en funcion de las operaciones TAD de una lista
+void insertar(Titular);// insertar en la lista de titulares
 
-void insertar(Titular);
+void delete(Titular);// borrar lista de titulares
 
-void delete(Titular);
+Titular *listar();// imprimir lista de titulares
 
-Titular *listar();
+Titular *buscar(string palabraDeBusqueda);// imprimir los titulares
 
-Titular *buscar(string palabraDeBusqueda);
+Titular *eliminar(string palabraDebusqueda);// eliminar titular con cierta palabra
+
+Titular *cambiarPosicion(/*TITULAR*/ );//cambiar de relevancia un titular
