@@ -15,11 +15,96 @@ struct listaTitulares {
     nododoble* end = nullptr;
 
     void add(struct TNoticia* pTitle){
+    
         insert(pTitle, POSITION_END);
     } 
 
     void addAtBeginning(struct TNoticia* pTitle){
         insert(pTitle,POSITION_BEGINNING);
+    }
+
+    void listar(){   // saca a consola cada uno de los elementos de la lista
+        nododoble* cursor = start; // primer nodo de la lista
+        int counter = 0;
+
+        while(counter < size){
+            struct TNoticia noticiaactual = ((struct TNoticia)(cursor->data));
+            cout << noticiaactual.titular <<endl;
+            cursor=cursor->next;
+            counter++;
+        }
+    }
+
+    int search(string pTitle){
+        nododoble* cursor = start;
+
+        int counter = 0;
+
+        while(counter < size){
+            struct TNoticia noticiaactual = ((struct TNoticia)(cursor->data));
+            if (pTitle == noticiaactual.titular){
+                return counter;
+            }
+
+            cursor=cursor->next;
+            counter++;
+        }
+        return -1;
+    }
+
+    /*delete*/
+
+    void deleteTitular(string pTitle){
+        int pos = search(pTitle);
+
+        nododoble* cursor = start;
+
+        int counter = 0;
+
+        while(cursor != nullptr){
+            if((cursor->data).titular == pTitle){
+                if (cursor->prev != end){
+                    (cursor->prev)->next = cursor->next;
+                }else{ //si entra es que se va a eliminar el start
+                    start = cursor->next;
+                }
+
+                if (cursor->next != nullptr){
+                    (cursor->next)->prev = cursor->prev;
+                }
+                size--;
+                return;
+            }
+            cursor = cursor->next;
+        }
+    }
+
+    /*reorder*/
+
+    void reorder(struct TNoticia* pTitle, string reub, int newPos){
+        nododoble* cursor = start;
+        int counter = 0;
+        
+        int max = search(pTitle->titular);
+
+        while(counter <= max){
+            cursor=cursor->next;
+            counter++;
+        }
+
+        if (reub == "+"){
+            counter = (counter - newPos)-1;
+        }else if( reub == "-"){
+            counter = (counter + newPos)-1;
+        }
+
+        deleteTitular(pTitle->titular);
+        insert(pTitle, counter);
+
+
+
+
+
     }
 
     int insert(struct TNoticia* pValue, int pPosition) {
