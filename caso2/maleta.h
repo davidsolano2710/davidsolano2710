@@ -4,26 +4,22 @@
 
 using namespace std;
 
+template <typename T>
 class Maleta
 {
 private:
-    int idPersona; 
+    int numero
     
 
 public:
-
-    Maleta(){
-        idPersona = 0;
+    void Persona(int pIdentificacion, int pVuelo){
     }
-    
-    Maleta(int pId){
-        idPersona = pId;
+    int getIdentificacion(){
+        return identificacion;
     }
-
-    int getIdPersona(){
-        return idPersona;
+    int getVuelo(){
+        return vuelo;
     }
-
 };
 
 #endif
