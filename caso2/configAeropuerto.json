@@ -1,68 +1,64 @@
 {
     "simulacion": {
-      "tiempo_simulacion": 7200, // duracion de la simulación en segundos (2 horas)
+      "tiempo_simulacion": 7200,
       "cantidad_pasajeros": {
-        "min": 100, // numero minimo de pasajeros
-        "max": 500 // numero maximo de pasajeros
-      },
+        "min": 100,
+        "max": 500
+      }
     },
     "checkin": {
       "tiempo_inicio": 0,
-      "tiempo_fin": 1800, // 30 minutos
+      "tiempo_fin": 1800,
       "velocidad_procesamiento": {
-        "min": 5, // Tiempo minimo por pasajero
-        "max": 15 // Tiempo maximo por pasajero
+        "min": 5,
+        "max": 15
       }
     },
     "aduanas": {
-      "tiempo_inicio": 1800, // 30 minutos
-      "tiempo_fin": 2700, // 45 minutos)
+      "tiempo_inicio": 1800,
+      "tiempo_fin": 2700,
       "velocidad_procesamiento": {
-        "min": 10, // Tiempo minimo por pasajero
-        "max": 30 // Tiempo maximo por pasajero
+        "min": 10,
+        "max": 30
       }
     },
     "revision_seguridad": {
-      "tiempo_inicio": 2700, // 45 minutos
-      "tiempo_fin": 3600, // 1 hora
+      "tiempo_inicio": 2700,
+      "tiempo_fin": 3600,
+      "probabilidad_sospechoso": 0.08,
       "velocidad_procesamiento": {
-        "min": 8, // Tiempo minimo por pasajero
-        "max": 20 // Tiempo maximo por pasajero
+        "min": 8,
+        "max": 20
       }
     },
     "zona_libre": {
-      "tiempo_inicio": 3600, // 1 hora
-      "tiempo_fin": 5400, // 1.5 horas
+      "tiempo_inicio": 3600,
+      "tiempo_fin": 5400
     },
     "sala_espera": {
-      "tiempo_inicio": 5400, // 1.5 horas
-      "tiempo_fin": 7200, // 2 horas
+      "tiempo_inicio": 5400,
+      "tiempo_fin": 7200
     },
     "manejo_maletas": {
       "tiempo_inicio": 0,
-      "tiempo_fin": 3600, // 1 hora
+      "tiempo_fin": 3600,
+      "probabilidad_sospechoso": 0.08,
       "velocidad_procesamiento": {
-        "min": 2, // Tiempo minimo por maleta
-        "max": 30 // Tiempo maximo por maleta
+        "min": 2,
+        "max": 30
       },
       "capacidad_vagon": {
-        "min": 10, // minimo de maletas por vagon
-        "max": 30 // maximo de maletas por vagon
+        "max": 30
       }
     },
     "cuarto_oscuro": {
-      "tiempo_inicio": 3600, // 1 hora
-      "tiempo_fin": 5400 // 1.5 horas
-    },
-    "objetos_maletas": {
-      "cantidad_minima": 1, // minimo de objetos por maleta
-      "cantidad_maxima": 40, // maximo de objetos por maleta
-      "probabilidad_sospechoso": 0.08, // probabilidad de que un objeto sea sospechoso
-      "probabilidad_ilegal": 0.01 // probabilidad de que un objeto sea ilegal
+      "tiempo_inicio": 3600,
+      "tiempo_fin": 5400,
+      "probabilidad_ilegal": 0.01
     },
     "zona_libre_distribucion": {
-      "probabilidad_banos": 0.2, // probabilidad de que una persona vaya al baño
-      "probabilidad_duty_free": 0.4, // probabilidad de que una persona visite el duty-free
-      "probabilidad_comidas": 0.4 // probabilidad de que una persona visite las áreas de comidas
-    }
+      "probabilidad_banos": 0.2,
+      "probabilidad_duty_free": 0.4,
+      "probabilidad_comidas": 0.4
   }
+}
